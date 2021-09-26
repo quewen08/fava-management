@@ -11,7 +11,7 @@ If you want to deploy fava on the server, you will find that the fava process ma
 
 ## Installation
 ```bash
-git clone https://github.com/zsxsoft/fava-management
+git clone https://github.com/kaaass/fava-management
 cd fava-management
 # If you have your own fava and beancount installed, you can just
 # pip install django django-revproxy
@@ -37,7 +37,7 @@ See [Gunicorn documentation](https://docs.gunicorn.org/en/latest/run.html#django
 
 ## Docker
 ```bash
-docker run --rm -v/home/ubuntu/bean:/bean -p8080:80 -eBEANCOUNT_FILE=/bean/main.bean -eUSERNAME=admin -ePASSWORD=12345678 -it zsxsoft/fava-management
+docker run --rm -v/home/ubuntu/bean:/bean -p8080:80 -eBEANCOUNT_FILE=/bean/main.bean -eUSERNAME=admin -ePASSWORD=12345678 -it kaaass/fava-management
 ```
 
 ## Need more security?
