@@ -1,17 +1,14 @@
 """The command-line interface for Fava."""
 
 import os
-import errno
+
 import click
-
-from werkzeug.middleware.profiler import ProfilerMiddleware
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from cheroot import wsgi
-
 from fava.application import app
 from fava.util import simple_wsgi
-from fava import __version__
-from werkzeug.wrappers import Request, Response, ResponseStream
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from werkzeug.wrappers import Request, Response
+
 
 class CheckKeyMiddleware():
     def __init__(self, app, key):
@@ -20,11 +17,12 @@ class CheckKeyMiddleware():
 
     def __call__(self, environ, start_response):
         request = Request(environ)
-        requestKey = request.headers.get('key', '')
-        if requestKey == self.key:
+        request_key = request.headers.get('key', '')
+        if request_key == self.key:
             return self.app(environ, start_response)
-        res = Response(u'Authorization failed', mimetype= 'text/plain', status=401)
+        res = Response(u'Authorization failed', mimetype='text/plain', status=401)
         return res(environ, start_response)
+
 
 def fava_child(args):
     filenames = args['filenames']

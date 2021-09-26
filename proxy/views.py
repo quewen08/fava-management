@@ -1,20 +1,11 @@
-from django.http import HttpResponse
+import logging
+
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.utils.decorators import method_decorator
 from revproxy.views import ProxyView
+
 from proxy.process import FavaProcess
-
-from child import fava_child
-from contextlib import closing
-from multiprocessing import Process
-
-import socket
-import sys
-import argparse
-import shlex
-import logging
-from time import sleep
-
 
 # too noisy...
 logging.getLogger('revproxy.view').setLevel(logging.ERROR)
