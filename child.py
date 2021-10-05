@@ -49,6 +49,6 @@ def fava_child(args):
         )
     app.wsgi_app = CheckKeyMiddleware(app.wsgi_app, key)
 
-    server = wsgi.Server((host, port), app)
+    server = wsgi.Server((host, port), app, numthreads=1)
     print("Running Fava on http://{}:{}".format(host, port))
     server.safe_start()
