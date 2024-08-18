@@ -1,7 +1,7 @@
-click==8.0.1
-whitenoise==5.0.1
-Django==3.0.3
-django-revproxy==0.10.0
-fava==1.20.1
-cheroot==8.3.0
-Werkzeug==2.0.1
+click==8.1.7
+whitenoise==6.7.0
+Django==5.1.0
+django-revproxy==0.12.0
+fava==1.28
+cheroot==10.0.1
+Werkzeug==3.0.3

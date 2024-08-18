@@ -17,6 +17,7 @@ class ReverseFava(ProxyView):
         super().__init__()
         self.process = FavaProcess.instance()
         self.upstream = 'http://127.0.0.1:' + str(self.process.port) + '/fava/'
+        logging.debug(f"Proxying requests to: {self.upstream}")
 
     def get_request_headers(self):
         headers = super(ReverseFava, self).get_request_headers()
