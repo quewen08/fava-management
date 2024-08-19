@@ -10,5 +10,6 @@ services:
       - BEANCOUNT_FILE=/bean/main.bean
       - USERNAME=admin
       - PASSWORD=12345678
+      - CSRF_TRUSTED_ORIGINS="https://domain1.com,https://domain2.com"
     volumes:
       - ./data:/bean

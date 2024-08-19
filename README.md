@@ -24,6 +24,7 @@ python manage.py createsuperuser
 
 ## Development
 ```bash
+# This path must be an absolute path
 python3 manage.py runserver --fava="your_beancount_entrypoint_file"
 ```
 
@@ -37,7 +38,7 @@ See [Gunicorn documentation](https://docs.gunicorn.org/en/latest/run.html#django
 
 ## Docker
 ```bash
-docker run --rm -v/home/ubuntu/bean:/bean -p8000:8000 -eBEANCOUNT_FILE=/bean/main.bean -eUSERNAME=admin -ePASSWORD=12345678 -it quewen08/fava-management
+docker run --rm -v/home/ubuntu/bean:/bean -p8000:8000 -eBEANCOUNT_FILE=/bean/main.bean -eUSERNAME=admin -ePASSWORD=12345678 -eCSRF_TRUSTED_ORIGINS="https://domain1.com,https://domain2.com" -it quewen08/fava-management
 ```
 
 ## Need more security?
