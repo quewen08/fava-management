@@ -1,6 +1,9 @@
 fava-management
 ===========================
 
+[![docker image size](https://img.shields.io/docker/image-size/quewen08/fava-management/latest?label=docker-image)](https://hub.docker.com/repository/docker/quewen08/fava-management/general)
+![docker pulls](https://img.shields.io/docker/pulls/quewen08/fava-management)
+
 A fava management panel.
 
 If you want to deploy fava on the server, you will find that the fava process may crash frequently. This project is a fava controller that allows you to restart fava in your browser. In addition, this project also added Django-based authentication to Fava.
