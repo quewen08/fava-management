@@ -45,14 +45,14 @@ COPY . .
 COPY docker/prestart.sh ./prestart.sh
 
 # Ensure scripts are executable
-RUN chmod +x ./prestart.sh && . venv/bin/activate && yes | sh prestart.sh
+RUN chmod +x ./prestart.sh
 
 # Collect static files and update settings
-RUN . venv/bin/activate && yes | python3 manage.py collectstatic && \
+RUN . venv/bin/activate && yes | python manage.py collectstatic && \
     sed -i 's/DEBUG = True/DEBUG = False/g' management/settings.py
 
 # Expose the port (if needed)
 EXPOSE 8000
 
 # Define the default command
-CMD ["/app/venv/bin/python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["sh", "-c", "./prestart.sh && /app/venv/bin/python manage.py runserver 0.0.0.0:8000"]

@@ -1,14 +1,14 @@
 version: '3'
 services:
   fava:
-    image: kaaass/fava-management
+    image: quewen08/fava-management
     container_name: 'fava'
     restart: always
     ports:
-      - "5000:80"
+      - "8000:8000"
     environment:
       - BEANCOUNT_FILE=/bean/main.bean
       - USERNAME=admin
-      - PASSWORD=123456
+      - PASSWORD=12345678
     volumes:
       - ./data:/bean

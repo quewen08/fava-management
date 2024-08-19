@@ -28,16 +28,6 @@ class CheckKeyMiddleware():
 
 
 def fava_child(args):
-    # Print environment variables
-    print("Environment Variables:")
-    for key, value in os.environ.items():
-        print(f"{key} = {value}")
-    
-    # Print the args parameter
-    print("\nArguments passed to fava_child:")
-    for key, value in args.items():
-        print(f"{key} = {value}")
-
     filenames = args['filenames']
     port = args['port']
     incognito = args['incognito']
@@ -49,8 +39,6 @@ def fava_child(args):
     env_filename = os.environ.get("BEANCOUNT_FILE")
     if env_filename:
         filenames = filenames + env_filename.split()
-
-    print("======= filenames : {}".format(filenames))
     if not filenames:
         raise click.UsageError("No file specified")
 
