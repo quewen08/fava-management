@@ -31,6 +31,7 @@ ENV BEANCOUNT_FILE /bean/main.bean
 ENV APP_MODULE management.wsgi
 ENV USERNAME admin
 ENV PASSWORD 123456
+ENV CSRF_TRUSTED_ORIGINS 'http://localhost,http://127.0.0.1'
 
 # Set work directory
 WORKDIR /app
