@@ -56,4 +56,4 @@ RUN . venv/bin/activate && yes | python manage.py collectstatic && \
 EXPOSE 8000
 
 # Define the default command
-CMD ["sh", "-c", "/app/venv/bin/activate && ./prestart.sh && /app/venv/bin/python manage.py runserver 0.0.0.0:8000"]
+CMD ["sh", "-c", "source /app/venv/bin/activate && ./prestart.sh && /app/venv/bin/python manage.py runserver 0.0.0.0:8000"]
