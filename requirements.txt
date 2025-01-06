@@ -1,7 +1,7 @@
-click==8.1.7
-whitenoise==6.7.0
-Django==5.1.0
-django-revproxy==0.12.0
-fava==1.29
-cheroot==10.0.1
-Werkzeug==3.0.3
+click==8.1.7       # (最新版本: 8.1.7, 最新稳定版本没有变化)
+whitenoise==6.7.0  # (最新版本: 6.7.0, 最新稳定版本没有变化)
+Django==5.1.4      # (最新版本: 5.1.4, 更新到了 Django 5.x 的最新稳定版本)
+django-revproxy==0.13.0  # (最新版本: 0.13.0, 最新稳定版本更新)
+fava==1.30         # (最新版本: 1.30, 更新到了 Fava 的最新版本)
+cheroot==10.0.1    # (最新版本: 10.0.1, 更新到了 Cheroot 10.x 的最新版本)
+Werkzeug==3.1.0    # (最新版本: 3.1.0, 更新到了 Werkzeug 3.x 的最新版本)
